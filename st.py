@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 
+# deploy
 # Set up page configuration
 st.set_page_config(page_title="Uber Demand-Supply Gap Analysis", layout="wide")
 
@@ -62,10 +63,10 @@ elif selected_section == "Dashboard":
             image = Image.open(image_path)
             if i % 2 != 0:  # Odd images go to col1
                 with col1:
-                    st.image(image, caption=f"Visualization {i}", use_column_width=True)
+                    st.image(image, caption=f"Visualization {i}", use_container_width=True)
             else:  # Even images go to col2
                 with col2:
-                    st.image(image, caption=f"Visualization {i}", use_column_width=True)
+                    st.image(image, caption=f"Visualization {i}", use_container_width=True)
         except FileNotFoundError:
             st.error(f"Image '{image_path}' not found.")
 st.title("""
